@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>To Do List</title>
+</head>
+<body>
+<h1>Список дел (<span th:text="${dealsCount}">0</span>)</h1>
+<br><br>
+<div id="book-list">
+    <div th:each="deal : ${deals}">
+        <a class="deal-link" th:attr="data-id=${deal.id}" th:text="${deal.id} + '. ' + ${deal.text} +
+' - до ' + ${deal.date} + ' - ' + ${deal.readiness}"></a>
+    </div>
+</div>
+<p th:text="${someParameter}"></p>
+</body>
+</html>
